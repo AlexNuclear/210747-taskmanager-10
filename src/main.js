@@ -1,4 +1,5 @@
-let TASK_COUNT = 3
+`use strict`
+let TASK_COUNT = 3;
 
 const createMenuTemplate = () => {
     return (`
@@ -30,8 +31,8 @@ const createMenuTemplate = () => {
             >STATISTICS</label
         >
       </section>
-    `)
-}
+    `);
+};
 
 const createFilterTemplate = () => {
     return (`
@@ -103,8 +104,8 @@ const createFilterTemplate = () => {
         >Archive <span class="filter__archive-count">115</span></label
         >
       </section>
-    `)
-}
+    `);
+};
 
 const createTaskBoardTemplate = () => {
     return (`
@@ -117,8 +118,8 @@ const createTaskBoardTemplate = () => {
 
         <div class="board__tasks"> </div>
       </section>
-    `)
-}
+    `);
+};
 
 const createTaskCardTemplate = () => {
     return (`
@@ -187,8 +188,8 @@ const createTaskCardTemplate = () => {
           </div>
         </div>
       </article>
-    `)
-}
+    `);
+};
 
 const createTaskEditTemplate = () => {
     return (`
@@ -447,31 +448,31 @@ const createTaskEditTemplate = () => {
         </div>
       </form>
     </article>
-    `)
-}
+    `);
+};
 
 const createButtonLoadTemplate = () => {
     return (`
         <button class="load-more" type="button">load more</button>
-    `)
-}
+    `);
+};
 
 const render = (container, template, place = 'beforeend') => {
-  container.insertAdjacentHTML( place, template)
-}
+  container.insertAdjacentHTML( place, template);
+};
 
-const $siteMainElem = document.querySelector('.main')
-const $siteHeaderElem = $siteMainElem.querySelector('.main__control')
-const $taskListElem = $siteMainElem.querySelector('.board__tasks')
-const $boardElem = $siteMainElem.querySelector('.board')
+const $siteMainElem = document.querySelector('.main');
+const $siteHeaderElem = $siteMainElem.querySelector('.main__control');
+const $taskListElem = $siteMainElem.querySelector('.board__tasks');
+const $boardElem = $siteMainElem.querySelector('.board');
 
-render($siteHeaderElem, createSiteMenuTemplate())
-render($siteHeaderElem, createFilterTemplate())
-render($siteHeaderElem, createTaskBoardTemplate())
+render($siteHeaderElem, createSiteMenuTemplate());
+render($siteHeaderElem, createFilterTemplate());
+render($siteHeaderElem, createTaskBoardTemplate());
 
 new Array(TASK_COUNT)
 .fill('')
 .forEach(() => {
-  render($taskListElem, createTaskCardTemplate,)
-})
+  render($taskListElem, createTaskCardTemplate)
+});
 
